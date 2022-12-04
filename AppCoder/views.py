@@ -9,3 +9,4 @@ def saludo_a(request, nombre):
     return HttpResponse(f"Hola como estas {nombre}")
 def mostrar_mi_template(request):
     return render(request, "AppCoder/index.html")
+# Blablablablablabla
