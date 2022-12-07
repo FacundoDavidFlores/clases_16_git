@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppCoder.views import saludo, saludo_dos, saludo_a, mostrar_mi_template
+from AppCoder.views import (saludo, saludo_dos, saludo_a, mostrar_mi_template, mostrar_familiares)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,5 @@ urlpatterns = [
     path('hola-mundo/saludar-dos', saludo_dos),
     path('hola-mundo/saludar/<nombre>', saludo_a),
     path('mostrar_mi_template/', mostrar_mi_template),
+    path('mi_familiar/', mostrar_familiares),
 ]
