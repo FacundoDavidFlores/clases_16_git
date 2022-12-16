@@ -1,5 +1,9 @@
 {% extends 'AppCoder/base.html' %}
-{% block titulo %} Buscar Familiares por nombre {% endblock %}
+
+{% block titulo %}
+    Buscar Familiares por nombre
+{% endblock %}
+
 {% block contenido %}
     <form action = "/mi_familiar/buscar" method = "post">
         {% csrf_token %}
