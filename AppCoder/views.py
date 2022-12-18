@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from AppCoder.models import Familiar    #Esto es un importe mio nuevo
 from AppCoder.forms import Buscar, FamiliarForm
 from django.views import View
+from django.views.generic import ListView, CreateView
 # Create your views here.
 def saludo(request):    #Consulta o peticion
     return HttpResponse("Hola mi primera app")
@@ -54,4 +55,12 @@ class AltaFamiliar(View):
             return render(request, self.template_name, {'form':form, 'msg_exito':msg_exito})
         return render(request, self.template_name, {"form":form})
     #---------------------------------------------------------------------------
+#---------------------------------------------------------------------------
+class FamiliarList(ListView):
+    model = Familiar
+#---------------------------------------------------------------------------
+class FamiliarCrear(CreateView):
+    model = Familiar
+    success_url = "/panel_familiar"
+    fields = ["nombre", "direccion", "numero_pasaporte"]
 #---------------------------------------------------------------------------
